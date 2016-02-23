@@ -44,9 +44,11 @@ public void moveDown() {
 public ElevatorMovement direction() {
   if (destinationFloors.size() > 0){
     if (currentFloor < destinationFloors.peek()){
+    	System.out.println("Elevator Moving upwards..");
       return ElevatorMovement.UP;
     } else if (currentFloor > destinationFloors.peek()) {
-      return ElevatorMovement.UP;
+    	System.out.println("Elevator Moving downwards..");
+      return ElevatorMovement.DOWN;
     }
   }
   return ElevatorMovement.HOLD;
