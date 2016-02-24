@@ -1,13 +1,18 @@
 package org.latha.ess;
 
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 import org.latha.ess.cons.ElevatorMovement;
 import org.latha.ess.cons.ElevatorStatus;
 
-public class Elevator { private Integer currentFloor;
+public class Elevator { 
+	private Integer elevatorId;
+
+private Integer currentFloor;
 private Queue<Integer> destinationFloors;
+Integer noOfTripsByElevator;
 
 public Elevator(Integer currentFloor) {
   this.currentFloor = currentFloor;
@@ -56,6 +61,22 @@ public ElevatorMovement direction() {
 
 public ElevatorStatus status() {
   return (destinationFloors.size() > 0)?ElevatorStatus.OCCUPIED:ElevatorStatus.EMPTY;
+}
+
+public Integer getElevatorId() {
+	return elevatorId;
+}
+
+public void setElevatorId(Integer elevatorId) {
+	this.elevatorId = elevatorId;
+}
+
+public Integer getNoOfTripsByElevator() {
+	return noOfTripsByElevator;
+}
+
+public void setNoOfTripsByElevator(Integer noOfTripsByElevator) {
+	this.noOfTripsByElevator = noOfTripsByElevator;
 }
 
 }
